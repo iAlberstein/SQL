@@ -1,5 +1,7 @@
 # SQL
 
+**ENTREGA Nº 1***
+
 **Descripción:** 
 El proyecto consiste en el diseño de una base de datos para el Teatro Español Pigüé. El objetivo es gestionar la programación de espectáculos, funciones, usuarios y la venta de entradas. Esto permitirá una mejor organización, un seguimiento eficiente de las funciones programadas y una experiencia más fluida para los usuarios.
 
@@ -82,10 +84,70 @@ El teatro enfrenta desafíos en la gestión manual de espectáculos, funciones y
 
 ---
 
-
-
 ## Diagrama E-R:
 <img src="./images/DER.png">
 
 ## Reverse Engineer:
 <img src="./images/Reverse-Engineer.png">
+
+---
+
+**ENTREGA Nº 2**
+
+**Listado de vistas**
+
+Vista: v_funciones_por_genero
+- Descripción: Lista todas las funciones disponibles clasificadas por género.
+- Objetivo: Permitir obtener un resumen de los espectáculos y sus funciones, organizados por género.
+- Tablas involucradas: GENEROS, ESPECTÁCULOS, FUNCIONES.
+
+Vista: v_entradas_por_usuario
+- Descripción: Muestra las entradas compradas por cada usuario.
+- Objetivo: Facilitar el análisis de ventas por usuario.
+- Tablas involucradas: ENTRADAS, USUARIOS, FUNCIONES.
+
+---
+
+**LListado de funciones personalizadas**
+
+Función: fn_precio_total_usuario
+- Descripción: Calcula el total gastado por un usuario en entradas.
+- Objetivo: Obtener un valor monetario total asociado a un usuario.
+- Tablas/datos manipulados: ENTRADAS.
+
+Función: fn_capacidad_restante
+- Descripción: Retorna la cantidad de asientos disponibles en una función.
+- Objetivo: Controlar la disponibilidad de entradas por función.
+- Tablas/datos manipulados: SALAS, FUNCIONES, ENTRADAS.
+
+---
+
+**Listado de Stored Procedures**
+
+Stored Procedure: sp_registrar_compra
+- Descripción: Registra la compra de una entrada, actualizando los datos relacionados.
+- Objetivo: Automatizar el proceso de registro de ventas.
+- Tablas involucradas: ENTRADAS, USUARIOS, FUNCIONES.
+
+Stored Procedure: sp_cancelar_funcion
+- Descripción: Cancela una función y notifica la disponibilidad a los usuarios.
+- Objetivo: Facilitar la gestión de funciones canceladas.
+- Tablas involucradas: FUNCIONES, ENTRADAS.
+
+---
+
+**Triggers**
+Descripción, objetivo y tablas involucradas
+
+Trigger: tr_borrar_funcion
+- Descripción: Al eliminar una función, elimina automáticamente las entradas asociadas.
+- Objetivo: Mantener la integridad de datos al eliminar funciones.
+- Tablas involucradas: FUNCIONES, ENTRADAS.
+
+-Trigger: tr_actualizar_capacidad
+- Descripción: Actualiza la capacidad disponible en una sala al registrar una nueva entrada.
+- Objetivo: Asegurar que no se exceda la capacidad permitida en las salas.
+- Tablas involucradas: SALAS, ENTRADAS.
+
+---
+
