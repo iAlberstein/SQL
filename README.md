@@ -1,5 +1,5 @@
 # SQL
-<link> backups/backup_28enero2025.sql </link>
+
 **ENTREGA Nº 1***
 
 **Descripción:** 
