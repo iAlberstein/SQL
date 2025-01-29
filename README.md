@@ -52,6 +52,8 @@ El teatro enfrenta desafíos en la gestión manual de espectáculos, funciones y
 
 ## Diagrama entidad relacion (DER)
 
+Con Reverse Engineer:
+
 <img src="./images/Reverse-Engineer.png">
 
 ## Listado de tablas y descripcion
@@ -190,9 +192,9 @@ Implementar una base de datos relacional para administrar la información de esp
 
 ## Roles y permisos
 
-Administrador: Acceso total a todos los recursos y configuraciones.
-Usuario: Acceso limitado a funciones básicas.
-Premium: Acceso a funciones avanzadas y contenido exclusivo
+- Administrador: Acceso total a todos los recursos y configuraciones.
+- Usuario: Acceso limitado a funciones básicas.
+- Premium: Acceso a funciones avanzadas y contenido exclusivo
 
 ## Back up de la base de datos
 
